@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Moyenne</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <header>
+    <h1>Calculateur de moyenne</h1>
+    <input type="text" placeholder="Insérer le lien ici" id="lien"><input type="button" onclick="placement()" value="Importer" id="baj">
+    <br>
+    <input type="text" id="acopie" placeholder="Générateur de lien" readonly><input type="button" value="Copier" onclick="copie('acopie')" id="bcopie">
+    <br>
+    <input type="button" id="hg-b" onclick="matiere('hg')" value="Hist-Géo">
+    <input type="button" id="ang-b" onclick="matiere('ang')" value="Anglais">
+    <input type="button" id="lvb-b" onclick="matiere('lvb')" value="LVB">
+    <input type="button" id="svt-b" onclick="matiere('svt')" value="SVT">
+    <input type="button" id="spc-b" onclick="matiere('spc')" value="SPC">
+    <input type="button" id="fp-b" onclick="matiere('fp')" value="Fr/Philo">
+    <input type="button" id="math-b" onclick="matiere('math')" value="Math">
+    <input type="button" id="snt-b" onclick="matiere('snt')" value="SNT">
+    <input type="button" id="ses-b" onclick="matiere('ses')" value="SES">
+    <input type="button" id="eps-b" onclick="matiere('eps')" value="EPS">
+    <input type="button" id="emc-b" onclick="matiere('emc')" value="EMC">
+    <input type="button" id="spea-b" onclick="matiere('spea')" value="Spé 1">
+    <input type="button" id="speb-b" onclick="matiere('speb')" value="Spé 2">
+  </header>
+  <body>
+    <section id="hg-s" class="hide">
+      <h2>Histoire-Géographie <input class="select" value="Note" onclick="modenote('hg')" type="button" id="bnhg"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('hg')" id="bmhg"><button onclick="matiere('hg')" class="x">X</button></h2> 
+      <p id="moyhg">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="chg" oninput="quoi('hg')" onchange="feur('hg')">
+      <div id="brhg">
+      <br id="blhg">
+      <button class="plus" onclick="ajouterNhg('hg', '', 20, 1)" id="plushg">+</button></div></div>
+    </section>
+    <section id="ang-s" class="hide">
+      <h2>Anglais <input class="select" value="Note" onclick="modenote('ang')" type="button" id="bnang"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('ang')" id="bmang"><button onclick="matiere('ang')" class="x">X</button></h2> 
+      <p id="moyang">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cang" oninput="quoi('ang')" onchange="feur('ang')">
+      <div id="brang">
+      <br id="blang">
+      <button class="plus" onclick="ajouterNang('ang', '', 20, 1)" id="plusang">+</button></div>
+    </section>
+    <section id="lvb-s" class="hide">
+      <h2>Langue Vivante B <input class="select" value="Note" onclick="modenote('lvb')" type="button" id="bnlvb"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('lvb')" id="bmlvb"><button onclick="matiere('lvb')" class="x">X</button></h2> 
+      <p id="moylvb">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="clvb" oninput="quoi('lvb')" onchange="feur('lvb')">
+      <div id="brlvb">
+      <br id="bllvb">
+      <button class="plus" onclick="ajouterNlvb('lvb', '', 20, 1)" id="pluslvb">+</button></div>
+    </section>
+    <section id="svt-s" class="hide">
+      <h2>SVT <input class="select" value="Note" onclick="modenote('svt')" type="button" id="bnsvt"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('svt')" id="bmsvt"><button onclick="matiere('svt')" class="x">X</button></h2> 
+      <p id="moysvt">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="csvt" oninput="quoi('svt')" onchange="feur('svt')">
+      <div id="brsvt">
+      <br id="blsvt">
+      <button class="plus" onclick="ajouterNsvt('svt', '', 20, 1)" id="plussvt">+</button></div>
+    </section>
+    <section id="spc-s" class="hide">
+      <h2>SPC <input class="select" value="Note" onclick="modenote('spc')" type="button" id="bnspc"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('spc')" id="bmspc"><button onclick="matiere('spc')" class="x">X</button></h2> 
+      <p id="moyspc">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cspc" oninput="quoi('spc')" onchange="feur('spc')">
+      <div id="brspc">
+      <br id="blspc">
+      <button class="plus" onclick="ajouterNspc('spc', '', 20, 1)" id="plusspc">+</button></div>
+    </section>
+    <section id="fp-s" class="hide">
+      <h2>Français/Philosophie <input class="select" value="Note" onclick="modenote('fp')" type="button" id="bnfp"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('fp')" id="bmfp"><button onclick="matiere('fp')" class="x">X</button></h2> 
+      <p id="moyfp">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cfp" oninput="quoi('fp')" onchange="feur('fp')">
+      <div id="brfp">
+      <br id="blfp">
+      <button class="plus" onclick="ajouterNfp('fp', '', 20, 1)" id="plusfp">+</button></div>
+    </section>
+    <section id="math-s" class="hide">
+      <h2>Mathématique <input class="select" value="Note" onclick="modenote('math')" type="button" id="bnmath"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('math')" id="bmmath"><button onclick="matiere('math')" class="x">X</button></h2> 
+      <p id="moymath">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cmath" oninput="quoi('math')" onchange="feur('math')">
+      <div id="brmath">
+      <br id="blmath">
+      <button class="plus" onclick="ajouterNmath('math', '', 20, 1)" id="plusmath">+</button></div>
+    </section>
+    <section id="snt-s" class="hide">
+      <h2>SNT <input class="select" value="Note" onclick="modenote('snt')" type="button" id="bnsnt"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('snt')" id="bmsnt"><button onclick="matiere('snt')" class="x">X</button></h2> 
+      <p id="moysnt">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="csnt" oninput="quoi('snt')" onchange="feur('snt')">
+      <div id="brsnt">
+      <br id="blsnt">
+      <button class="plus" onclick="ajouterNsnt('snt', '', 20, 1)" id="plussnt">+</button></div>
+    </section>
+    <section id="ses-s" class="hide">
+      <h2>SES <input class="select" value="Note" onclick="modenote('ses')" type="button" id="bnses"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('ses')" id="bmses"><button onclick="matiere('ses')" class="x">X</button></h2> 
+      <p id="moyses">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cses" oninput="quoi('ses')" onchange="feur('ses')">
+      <div id="brses">
+      <br id="blses">
+      <button class="plus" onclick="ajouterNses('ses', '', 20, 1)" id="plusses">+</button></div>
+    </section>
+    <section id="eps-s" class="hide">
+      <h2>EPS <input class="select" value="Note" onclick="modenote('eps')" type="button" id="bneps"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('eps')" id="bmeps"><button onclick="matiere('eps')" class="x">X</button></h2> 
+      <p id="moyeps">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="ceps" oninput="quoi('eps')" onchange="feur('eps')">
+      <div id="breps">
+      <br id="bleps">
+      <button class="plus" onclick="ajouterNeps('eps', '', 20, 1)" id="pluseps">+</button></div>
+    </section>
+    <section id="emc-s" class="hide">
+      <h2>EMC <input class="select" value="Note" onclick="modenote('emc')" type="button" id="bnemc"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('emc')" id="bmemc"><button onclick="matiere('emc')" class="x">X</button></h2> 
+      <p id="moyemc">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cemc" oninput="quoi('emc')" onchange="feur('emc')">
+      <div id="bremc">
+      <br id="blemc">
+      <button class="plus" onclick="ajouterNemc('emc', '', 20, 1)" id="plusemc">+</button></div>
+    </section>
+    <section id="spea-s" class="hide">
+      <h2>Spécialité 1 <input class="select" value="Note" onclick="modenote('spea')" type="button" id="bnspea"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('spea')" id="bmspea"><button onclick="matiere('spea')" class="x">X</button></h2> 
+      <p id="moyspea">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cspea" oninput="quoi('spea')" onchange="feur('spea')">
+      <div id="brspea">
+      <br id="blspea">
+      <button class="plus" onclick="ajouterNspea('spea', '', 20, 1)" id="plusspea">+</button></div>
+    </section>
+    <section id="speb-s" class="hide">
+      <h2>Spécialité 2 <input class="select" value="Note" onclick="modenote('speb')" type="button" id="bnspeb"><input type="button" class="notselect" value="Moyenne" onclick="modemoy('speb')" id="bmspeb"><button onclick="matiere('speb')" class="x">X</button></h2> 
+      <p id="moyspeb">Moyenne dans cette matière : </p>
+      
+     <input type="number" placeholder="Moyenne" class="hide" id="cspeb" oninput="quoi('speb')" onchange="feur('speb')">
+      <div id="brspeb">
+      <br id="blspeb">
+      <button class="plus" onclick="ajouterNspeb('speb', '', 20, 1)" id="plusspeb">+</button></div>
+    </section>
+    <br>
+    <section id="moyg">Moyenne Générale : </section>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+#lol {
+  color: blue;
+}
+
+.hide {
+  display: none;
+}
+
+.x {
+  font-weight: bold;
+  color: red;
+}
+
+.plus {
+  font-weight: bold;
+  color: green;
+}
+
+.note {
+  width: 10vw;
+}
+
+.yes {
+  transition-duration: 0.5s;
+  background-color: #3DD621;
+}
+
+.no {
+  transition-duration: 0.5s;
+  background-color: #ED6D5D;
+}
+
+.select {
+  background-color: #FFA213;
+}
+
+.notselect {
+  background-color: #FBC35A;
+}
